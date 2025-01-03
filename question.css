@@ -14,7 +14,8 @@
     padding: 10px;
     border: 0.2em solid #05161A;
     border-radius: 0.9em;
-
+    height: 90px;
+    width: 390px;
     color: #05161A;
     margin-left: 14px;
     letter-spacing: 3px;
@@ -23,9 +24,10 @@
     font-weight: 300;
 }
 
-.radio-input-wrapper{
+.radio-input-wrapper {
   display: flex;
   flex-direction: row;
+  /* flex-wrap: wrap; */
 }
 
 .label {
@@ -87,12 +89,47 @@
   transition: .3s;
 }
 
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .QuestionContainer {
+        width: 90%;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .question {
+        font-size: 0.8em;
+        width: 100%;
+        height: auto;
+    }
+
+    .label-text {
+        font-size: 0.8em;
+        letter-spacing: 0.3em;
+    }
+
+    .radio-design {
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    .radio-input-wrapper {
+        flex-direction: column;
+    }
+
+    .slider {
+        width: 100%;
+    }
+}
+
+/* Checked radio state */
 .radio-input:checked~.label-text {
   color: #072E33;
   text-shadow:  0 1px 1px  #05161A;
 }
 
-.radio-input:checked+.label{
+.radio-input:checked+.label {
   border: 1px solid black;
 }
 
@@ -124,4 +161,8 @@
   border-radius: 50%;
   background-color: gainsboro;
   cursor: pointer;
+}
+
+.slider-value {
+  text-align: center;
 }

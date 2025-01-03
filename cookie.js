@@ -61,15 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function enableAnalytics() {
-        // Re-enable Google Analytics (if applicable)
         console.log("Analytics enabled");
     }
 
     function disableAnalytics() {
-        // Disable Google Analytics (if applicable)
         console.log("Analytics disabled");
-        deleteCookie("_ga"); // Example of deleting Google Analytics cookie
-    }
+        deleteCookie("_ga");
 
     acceptBtn.addEventListener("click", handleAcceptCookies);
     declineBtn.addEventListener("click", handleDeclineCookies);

@@ -1,7 +1,10 @@
 let laserParameters = [];
+let oldLaserParameters = [];
 let buffer = [];
 let audioBackend;
 let laserTypes = ["classic", "blaster", "burst"];
+let playing = false;
+
 const ModulePromise = new Promise(resolve => {
     Module = {
         onRuntimeInitialized: function() {
@@ -20,7 +23,6 @@ async function main() {
 
 
         handleSliders(audioBackend);
-        handlePlayPauseClick(audioBackend, Module);
         buffer = generateBuffer(Module);
 
 
@@ -36,39 +38,24 @@ main().catch(error => {
     console.error("An error occurred in main:", error);
 });
 
-function handlePlayPauseClick(audioBackend, Module) {
-    const playPauseButtons = document.getElementsByClassName("playPause");
-    for (let i = 0; i < playPauseButtons.length; i++) {
-        playPauseButtons[i].addEventListener("click", () => {
-            console.log("Daggoe");
+function playPause() {
+    if (audioBackend.getAudioContextState() === "suspended") {
+        audioBackend.audioContext.resume();
+    }
+    if (audioBackend.ended) {
+        playing = false;
+    }
 
-            if (audioBackend.getAudioContextState() === "suspended") {
-                    audioBackend.audioContext.resume();
-                }
-                //TODO ELKE KLIK EFFE KIJKEN OF DIE GUY GEQUIT IS
-                if (audioBackend.ended) {
-                    playPauseButtons[i].dataset.playing = "false";
+    if (playing === false) {
+        playing = true;
+        audioBackend.ended = false;
+        audioBackend.playSound();
 
-                }
-
-                if ( playPauseButtons[i].dataset.playing === "false") {
-                    playPauseButtons[i].dataset.playing = "true";
-
-                    audioBackend.ended = false;
-
-                    audioBackend.playSound();
-
-                } else if ( playPauseButtons[i].dataset.playing === "true") {
-                    playPauseButtons[i].dataset.playing = "false";
-                    audioBackend.stopSound();
-                }
-
-            }, false
-        );
+    } else if (playing === true) {
+        playing = false;
+        audioBackend.stopSound();
     }
 }
-
-
 
 let LaserParameters = {
     sampleRate: 48000,
@@ -162,9 +149,12 @@ function submitSurvey(surveyId) {
             laserParameters.splice(5, 1);
 
         }
-
-        buffer = generateBuffer(Module);
-
+	if(JSON.stringify(oldLaserParameters) !== JSON.stringify(laserParameters)) {
+	   console.log("generating Buffer");
+           buffer = generateBuffer(Module);
+           oldLaserParameters = laserParameters;
+	}
+        playPause();
     }
 }
 

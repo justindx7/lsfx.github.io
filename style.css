@@ -3,12 +3,9 @@ body {
     margin: 0 auto;
     height: 150vh;
     width: 100vw;
-    /* background: #7711BB; */
     background: linear-gradient(#7711B1, #7610BB);
-    border: 3px solid #05161A;
-    border-radius: 3px;
-
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -33,7 +30,8 @@ h2 {
 
 .home-container {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  align-items: center;
 }
 
 .survey-page {
@@ -48,10 +46,16 @@ h2 {
 .TypeSelection {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     margin: 1%;
+}
+
+@media (min-width: 768px) {
+    .TypeSelection {
+        flex-direction: row;
+    }
 }
 
 .LaserTypeButtonContainer {
@@ -96,6 +100,12 @@ h2 {
 .Org {
   display: flex;
   flex-direction: row;
+}
+
+@media (max-width: 768px){
+  .Org{
+    flex-direction: column;
+  }
 }
 
 .BackgroundElement {
