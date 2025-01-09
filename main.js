@@ -64,7 +64,6 @@ let LaserParameters = {
 };
 
 function handleSliders(audioBackend){
-
     const gainSlider = document.getElementById("volume");
     gainSlider.oninput = () => {audioBackend.setGain(gainSlider.value)};
 }
@@ -110,7 +109,8 @@ function goToHomepage() {
     document.getElementById('homepage').style.display = 'flex';
 }
 
-function submitSurvey(surveyId) {
+function submitSurvey(surveyId,play) {
+    let playButton = /^true$/i.test(play);
     laserParameters = [];
     const survey = document.getElementById(surveyId);
     const radioGroups = survey.querySelectorAll('.radio-input-wrapper');
@@ -149,12 +149,18 @@ function submitSurvey(surveyId) {
             laserParameters.splice(5, 1);
 
         }
-	if(JSON.stringify(oldLaserParameters) !== JSON.stringify(laserParameters)) {
-	   console.log("generating Buffer");
-           buffer = generateBuffer(Module);
-           oldLaserParameters = laserParameters;
-	}
-        playPause();
+
+        if(playButton) {
+            if (JSON.stringify(oldLaserParameters) !== JSON.stringify(laserParameters)) {
+                console.log("generating Buffer");
+                buffer = generateBuffer(Module);
+                oldLaserParameters = laserParameters;
+            }
+            playPause();
+            console.log(laserParameters);
+        } else {
+            buffer = generateBuffer(Module);
+        }
     }
 }
 

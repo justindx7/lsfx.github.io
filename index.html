@@ -46,27 +46,42 @@
     <h1>Laser Sound Effects</h1>
     <div id="homepage" class="homepage">
       <div class="home-container">
+        <div class="introduction">
+          <h2>Introduction</h2>
+            <h3>Welcome to LaserSoundEffects.com!</h3>
+            <p>LaserSoundEffects.com is your ultimate <strong>free online laser sound synthesizer</strong>. We've made it easier than ever to generate high-quality laser sound effects, whether you're:</p>
+            <ul>
+              <li>A video game developer in the middle of a game jam,</li>
+              <li>A post-production engineer or sound designer,</li>
+              <li>Or simply a sci-fi nerd who loves laser sounds (like us).</li>
+            </ul>
+          <p><strong>this is the tool for you!</strong></p>
+          <p>Our R&D lab-coats are constantly designing, finetuning, and perfecting laser gun sound generators for you to use in your own projects! So feel welcome to take a look around in our <strong>pre-alpha early access</strong> version!</p>
+          <p><a href="#" class="cta-button" id="scrollToNext">Get Started</a></p>
+        </div>
+        <section>
         <h2>Laser Type</h2>
         <div class="TypeSelection">
             <div class="LaserTypeButtonContainer">
-                <p class="laser-title">Classic</p>
+                <h3 class="laser-title">Classic</h3>
                 <img class="Pictogram" src="assets/Classic.png" alt="Classic">
                 <p>Ol' Reliable. Your standard duty laser pistol. You could probably hold it in one hand.</p>
-                <button onclick="goToSurvey('1')">Go</button>
+                <button onclick="location.href='classic.html'">Go</button>
             </div>
             <div class="LaserTypeButtonContainer">
-                <p class="laser-title">Blaster</p>
+                <h3 class="laser-title">Blaster</h3>
                 <img class="Pictogram" src="assets/Blaster.png" alt="Blaster">
                 <p>Our team of nerds is frantically experimenting with the blaster. Not safe yet for field use.</p>
                 <button disabled>Disabled</button>
             </div>
             <div class="LaserTypeButtonContainer">
-                <p class="laser-title">Burst</p>
+                <h3 class="laser-title">Burst</h3>
                 <img class="Pictogram" src="assets/Burst.png" alt="Burst">
                 <p>Designed specifically to turn your enemies into Swiss Cheese. RATATATA.</p>
-                <button onclick="goToSurvey('3')">Go</button>
+                <button onclick="location.href='burst.html'">Go</button>
             </div>
         </div>
+        </section>
           <div class="Control">
             <button onclick='playPause()' >Demo</button>
             <div class="VolumeControl">
@@ -74,251 +89,8 @@
               <input type="range" class="slider" id="volume" min="0" max="1" value="0.5" step="0.01" />
             </div>
         </div>
+
       </div>
-    </div>
-
-    <div id="1" class="survey-page" style="display: none;">
-        <h2>Classic</h2>
-        <div class="BackgroundContainer">
-          <div class="Org">
-            <img class="BackgroundElement" src="assets/Target.png" alt="background">
-            <img class="EmptyBackgroundElement" src="assets/Target.png" alt="background">
-            <img class="BackgroundElement" src="assets/Whiteboard.png" alt="background">
-          </div>
-          <div class="Org">
-            <img class="BackgroundElement" src="assets/Whiteboard.png" alt="background">
-            <img class="EmptyBackgroundElement" src="assets/Target.png" alt="background">
-            <img class="BackgroundElement" src="assets/Target.png" alt="background">
-          </div>
-        </div>
-        <div class="QuestionContainer">
-            <div class="question">
-                <p>1. Speed</p>
-                <div class="radio-input-wrapper">
-                  <label class="label">
-                    <input value="1" name="speed" id="value-2" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Slow</div>
-                  </label>
-                  <label class="label">
-                    <input value="2" name="speed" id="value-3" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Moderate</div>
-                  </label>
-                  <label class="label">
-                    <input value="3" name="speed" id="value-4" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Fast</div>
-                  </label>
-                </div>
-            </div>
-            <div class="question">
-                <p>2. Weight</p>
-                <div class="radio-input-wrapper">
-                  <label class="label">
-                    <input value="1" name="weight" id="value-2" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Light</div>
-                  </label>
-                  <label class="label">
-                    <input value="2" name="weight" id="value-3" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Moderate</div>
-                  </label>
-                  <label class="label">
-                    <input value="3" name="weight" id="value-4" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Heavy</div>
-                  </label>
-                </div>
-            </div>
-            <div class="question">
-                <p>3. Color</p>
-                <div class="radio-input-wrapper">
-                  <label class="label">
-                    <input value="1" name="color" id="value-2" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Clean</div>
-                  </label>
-                  <label class="label">
-                    <input value="2" name="color" id="value-3" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Dirty</div>
-                  </label>
-                  <label class="label">
-                    <input value="3" name="color" id="value-4" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Rough</div>
-                  </label>
-                </div>
-            </div>
-            <div class="question">
-                <p>4. Compression Amount</p>
-                    <div class="slider-container">
-                        <span>0</span>
-                        <input type="range" class="slider" name="compressionAmount" min="0" max="3" value="1" oninput="updateSliderValue(this)">
-                        <span>3<br></span>
-                        <span class="slider-value">1</span>
-                    </div>
-            </div>
-            <div class="question">
-                <p>5. Compression Intensity</p>
-                    <div class="slider-container">
-                        <span>10</span>
-                        <input type="range" class="slider" name="satisfaction" min="10" max="1000" value="10" oninput="updateSliderValue(this)">
-                        <span>1000<br></span>
-                        <span class="slider-value">10</span>
-                    </div>
-            </div>
-        </div>
-            <div class="Control">
-                <button onclick="submitSurvey('1')">Play</button>
-                <div class="VolumeControl">
-                  <label for="volume">Volume</label>
-                  <input type="range" class="slider" onchange="audioBackend.setGain(value)" min="0" max="1" value="0.5" step="0.01" />
-                </div>
-                <button onclick="handleDownloadWav()" >Download</button>
-                <button onclick="goToHomepage()">Back</button>
-            </div>
-    </div>
-
-    <div id="2" class="survey-page" style="display: none;">
-        <img class="BackgroundImage" src="assets/Background.png" alt="background">
-        <button onclick="goToHomepage()">Back</button>
-    </div>
-
-    <div id="3" class="survey-page" style="display: none;">
-        <h2>Burst Laser</h2>
-        <div class="BackgroundContainer">
-          <div class="Org">
-            <img class="BackgroundElement" src="assets/Target.png" alt="background">
-            <img class="EmptyBackgroundElement" src="assets/Target.png" alt="background">
-            <img class="BackgroundElement" src="assets/Whiteboard.png" alt="background">
-          </div>
-          <div class="Org">
-            <img class="BackgroundElement" src="assets/Whiteboard.png" alt="background">
-            <img class="EmptyBackgroundElement" src="assets/Target.png" alt="background">
-            <img class="BackgroundElement" src="assets/Target.png" alt="background">
-          </div>
-        </div>
-        <div class="QuestionContainer">
-            <div class="question">
-                <p>1. Number of Rounds</p>
-                <div class="slider-group">
-                    <div class="slider-container">
-                        <span>3</span>
-                        <input type="range" class="slider" name="roundsAmount" min="3" max="11" value="5" oninput="updateSliderValue(this)">
-                        <span>11<br></span>
-                        <span class="slider-value">5</span>
-                    </div>
-                </div>
-            </div>
-            <div class="question">
-                <p>2. Speed</p>
-                <div class="radio-input-wrapper">
-                  <label class="label">
-                    <input value="1" name="speed" id="value-2" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Slow</div>
-                  </label>
-                  <label class="label">
-                    <input value="2" name="speed" id="value-3" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Moderate</div>
-                  </label>
-                  <label class="label">
-                    <input value="3" name="speed" id="value-4" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Fast</div>
-                  </label>
-                </div>
-            </div>
-            <div class="question">
-                <p>3. Weight</p>
-                <div class="radio-input-wrapper">
-                  <label class="label">
-                    <input value="1" name="weight" id="value-2" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Light</div>
-                  </label>
-                  <label class="label">
-                    <input value="2" name="weight" id="value-3" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Moderate</div>
-                  </label>
-                  <label class="label">
-                    <input value="3" name="weight" id="value-4" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Heavy</div>
-                  </label>
-                </div>
-            </div>
-            <div class="question">
-                <p>4. Color</p>
-                <div class="radio-input-wrapper">
-                  <label class="label">
-                    <input value="1" name="color" id="value-2" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Clean</div>
-                  </label>
-                  <label class="label">
-                    <input value="2" name="color" id="value-3" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Dirty</div>
-                  </label>
-                  <label class="label">
-                    <input value="3" name="color" id="value-4" class="radio-input" type="radio">
-                    <div class="radio-design"></div>
-                    <div class="label-text">Rough</div>
-                  </label>
-                </div>
-            </div>
-            <div class="question">
-                <p>5. Variance</p>
-                <div class="slider-group">
-                    <div class="slider-container">
-                        <span>0</span>
-                        <input type="range" class="slider" name="variance" min="0" max="100" value="10" oninput="updateSliderValue(this)">
-                        <span>100<br></span>
-                        <span class="slider-value">10</span>
-                    </div>
-                </div>
-            </div>
-            <div class="question">
-                <p>4. Compression Amount</p>
-                <div class="slider-group">
-                    <div class="slider-container">
-                        <span>0</span>
-                        <input type="range" class="slider" name="compressionAmount" min="0" max="3" value="1" oninput="updateSliderValue(this)">
-                        <span>3<br></span>
-                        <span class="slider-value">1</span>
-                    </div>
-                </div>
-            </div>
-            <div class="question">
-                <p>6. Compression Intensity</p>
-                <div class="slider-group">
-                    <div class="slider-container">
-                        <span>10</span>
-                        <input type="range" class="slider" name="compressionIntensity" min="10" max="1000" value="10" oninput="updateSliderValue(this)">
-                        <span>1000<br></span>
-                        <span class="slider-value">10</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-
-            <div class="Control">
-                <button onclick="submitSurvey('3')">Play</button>
-                <div class="VolumeControl">
-                  <label for="volume">Volume</label>
-                  <input type="range" class="slider" onchange="audioBackend.setGain(value)" min="0" max="1" value="0.5" step="0.01" />
-                </div>
-                <button onclick="handleDownloadWav()" >Download</button>
-                <button onclick="goToHomepage()">Back</button>
-            </div>
-        </div>
     </div>
 
     <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: #333; color: #fff; padding: 15px; text-align: center; z-index: 1000;">
@@ -350,5 +122,6 @@
     <script src="main.js"></script>
     <script src="cookie.js"></script>
     <script src="LSFx.js"></script>
+    <script src="scroll.js"></script>
 </body>
 </html>

@@ -40,12 +40,6 @@
   transition: .3s;
 }
 
-.label:hover,
-.label:focus-within,
-.label:active {
-  background: hsla(0, 0%, 80%, .14);
-}
-
 .radio-input {
   position: absolute;
   left: 0;
@@ -87,6 +81,10 @@
   font-size: 14px;
   font-weight: 300;
   transition: .3s;
+}
+
+.label-text:hover {
+  color: #FAE9E5;
 }
 
 /* Media query for mobile responsiveness */

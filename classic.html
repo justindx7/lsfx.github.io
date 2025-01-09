@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H41QVV2HSR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        gtag('js', new Date());
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied'
+        });
+
+        function handleConsent(granted) {
+            if (granted) {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+                gtag('config', 'G-H41QVV2HSR');
+            } else {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+            }
+        }
+
+        function userGivesConsent() {
+            handleConsent(true);
+        }
+
+        function userDeniesConsent() {
+            handleConsent(false);
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="question.css">
+    <link rel="stylesheet" href="cookie.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="1" class="survey-page">
+    <h2>Classic</h2>
+<!--    <div class="BackgroundContainer">-->
+<!--        <div class="Org">-->
+<!--            <img class="BackgroundElement" src="assets/Target.png" alt="background">-->
+<!--            <img class="EmptyBackgroundElement" src="assets/Target.png" alt="background">-->
+<!--            <img class="BackgroundElement" src="assets/Whiteboard.png" alt="background">-->
+<!--        </div>-->
+<!--        <div class="Org">-->
+<!--            <img class="BackgroundElement" src="assets/Whiteboard.png" alt="background">-->
+<!--            <img class="EmptyBackgroundElement" src="assets/Target.png" alt="background">-->
+<!--            <img class="BackgroundElement" src="assets/Target.png" alt="background">-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="QuestionContainer">
+        <div class="question">
+            <p>1. Speed</p>
+            <div class="radio-input-wrapper">
+                <label class="label">
+                    <input value="1" name="speed" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Slow</div>
+                </label>
+                <label class="label">
+                    <input value="2" name="speed" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Moderate</div>
+                </label>
+                <label class="label">
+                    <input value="3" name="speed" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Fast</div>
+                </label>
+            </div>
+        </div>
+        <div class="question">
+            <p>2. Weight</p>
+            <div class="radio-input-wrapper">
+                <label class="label">
+                    <input value="1" name="weight" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Light</div>
+                </label>
+                <label class="label">
+                    <input value="2" name="weight" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Moderate</div>
+                </label>
+                <label class="label">
+                    <input value="3" name="weight" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Heavy</div>
+                </label>
+            </div>
+        </div>
+        <div class="question">
+            <p>3. Color</p>
+            <div class="radio-input-wrapper">
+                <label class="label">
+                    <input value="1" name="color" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Clean</div>
+                </label>
+                <label class="label">
+                    <input value="2" name="color" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Dirty</div>
+                </label>
+                <label class="label">
+                    <input value="3" name="color" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Rough</div>
+                </label>
+            </div>
+        </div>
+        <div class="question">
+            <p>4. Compression Amount</p>
+            <div class="slider-container">
+                <span>0</span>
+                <input type="range" class="slider" name="compressionAmount" min="0" max="3" value="1" oninput="updateSliderValue(this)">
+                <span>3<br></span>
+                <span class="slider-value">1</span>
+            </div>
+        </div>
+        <div class="question">
+            <p>5. Compression Intensity</p>
+            <div class="slider-container">
+                <span>10</span>
+                <input type="range" class="slider" name="satisfaction" min="10" max="1000" value="10" oninput="updateSliderValue(this)">
+                <span>1000<br></span>
+                <span class="slider-value">10</span>
+            </div>
+        </div>
+    </div>
+    <div class="Control">
+        <button onclick="submitSurvey('1','true')">Play</button>
+        <button onclick="submitSurvey('1','false')">(re)Generate</button>
+
+        <div class="VolumeControl">
+            <label id="volume">Volume</label>
+            <input type="range" class="slider" onchange="audioBackend.setGain(value)" min="0" max="1" value="0.5" step="0.01" />
+        </div>
+        <button onclick="handleDownloadWav()" >Download</button>
+        <button onclick="location.href='index.html'">Home</button>
+    </div>
+</div>
+
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: #333; color: #fff; padding: 15px; text-align: center; z-index: 1000;">
+    <p>We use cookies to analyze site traffic and improve your experience. You can accept or decline these cookies.</p>
+    <button id="accept-cookies" onclick="userGivesConsent()">Accept</button>
+    <button id="decline-cookies" onclick="userDeniesConsent()">Decline</button>
+</div>
+<div id="cookie-settings" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; color: #333; padding: 20px; border: 1px solid #ccc; z-index: 1001;">
+    <h3>Customize Cookie Preferences</h3>
+    <form id="cookie-preferences-form">
+        <label>
+            <input type="checkbox" id="analytics-cookies" checked>
+            Allow Analytics Cookies
+        </label>
+        <br>
+        <button type="button" id="save-cookie-preferences">Save Preferences</button>
+    </form>
+</div>
+
+<div class="footnotes">
+    <p id="footnote1">
+        Justin & Decap<br>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScQlrQeoqkCjKGnOL3qK84UzJdfNqZpXxnGOkFnDphbl6Lkyg/viewform?usp=header" target="_blank"> Give Feedback </a>
+    </p>
+</div>
+
+
+<script src="audioExporter.js"></script>
+<script src="audioBackend.js"></script>
+<script src="main.js"></script>
+<script src="cookie.js"></script>
+<script src="../build/LSFx.js"></script>
+</body>
+</html>

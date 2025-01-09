@@ -1,9 +1,10 @@
 body {
     font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    margin: 0 auto;
-    height: 150vh;
+    margin: auto;
     width: 100vw;
+    min-height: 100vh;
     background: linear-gradient(#7711B1, #7610BB);
+    background-size: cover;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -11,7 +12,8 @@ body {
 h1 {
     font-size: 42px;
     color: gainsboro;
-    margin: 5px;
+    margin: 10px;
+    margin-left: 150px;
 }
 
 h2 {
@@ -34,14 +36,14 @@ h2 {
   align-items: center;
 }
 
-.survey-page {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    margin: 10px;
+.introduction {
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  border: 0.2em solid #05161A;
+  border-radius: 0.9em;
+  padding: 5px;
 }
-
 
 .TypeSelection {
     position: relative;
@@ -106,17 +108,23 @@ h2 {
   .Org{
     flex-direction: column;
   }
+  h1 {
+    margin-left: 5px;
+  }
 }
 
 .BackgroundElement {
   position: relative;
   opacity: 0.1;
+  width: 75%;
+  height: auto;
 }
 
 .EmptyBackgroundElement {
   opacity: 0;
   position: relative;
   width: 50%;
+  height: auto;
 }
 
 button {

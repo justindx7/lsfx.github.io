@@ -68,9 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Analytics disabled");
         deleteCookie("_ga");
 
-    acceptBtn.addEventListener("click", handleAcceptCookies);
-    declineBtn.addEventListener("click", handleDeclineCookies);
-    savePreferencesBtn.addEventListener("click", handleSavePreferences);
+        acceptBtn.addEventListener("click", handleAcceptCookies);
+        declineBtn.addEventListener("click", handleDeclineCookies);
+        savePreferencesBtn.addEventListener("click", handleSavePreferences);
 
-    checkCookieConsent();
+        checkCookieConsent();
+    }
 });
