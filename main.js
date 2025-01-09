@@ -157,7 +157,6 @@ function submitSurvey(surveyId,play) {
                 oldLaserParameters = laserParameters;
             }
             playPause();
-            console.log(laserParameters);
         } else {
             buffer = generateBuffer(Module);
         }
