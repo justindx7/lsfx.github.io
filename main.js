@@ -21,7 +21,7 @@ const ModulePromise = new Promise(resolve => {
 
 async function main() {
     const pages = ['burst', 'classic'];
-	
+
     try {
 	if(pages.some(page => window.location.href.includes(page))) {
 	   const Module = await ModulePromise;
@@ -33,7 +33,7 @@ async function main() {
 
 
         handleSliders(audioBackend);
-	
+
 	if(pages.some(page => window.location.href.includes(page))) {
            buffer = generateBuffer(Module);
 	}
@@ -172,4 +172,25 @@ function submitSurvey(surveyId,play) {
 
 function handleDownloadWav(){
     AudioExporter.exportWAV(audioBackend.audioBuffer, laserTypes[laserParameters[0] - 1] + "_laser.wav");
+}
+
+
+
+function playDemo() {
+    const soundFolder = "laserdemosoundfiles";
+    const fileCount = 4;
+    const soundFiles = Array.from({ length: fileCount }, (_, i) => `sound${i + 1}.mp3`);
+
+    const randomFile = soundFiles[Math.floor(Math.random() * soundFiles.length)];
+
+    const filePath = `${soundFolder}/${randomFile}`;
+
+    if (audioBackend.getAudioContextState() === "suspended") {
+        audioBackend.audioContext.resume();
+    }
+
+    this.audioElement = new Audio(filePath);
+    if (this.audioElement) {
+            this.audioElement.play();
+    }
 }
