@@ -5,6 +5,12 @@ let audioBackend;
 let laserTypes = ["classic", "blaster", "burst"];
 let playing = false;
 
+let LaserParameters = {
+    sampleRate: 48000,
+    speed: 0.5,
+    distortion: 0
+};
+
 const ModulePromise = new Promise(resolve => {
     Module = {
         onRuntimeInitialized: function() {
@@ -14,17 +20,23 @@ const ModulePromise = new Promise(resolve => {
 });
 
 async function main() {
+    const pages = ['burst', 'classic'];
+	
     try {
-        const Module = await ModulePromise;
-        console.log("done")
+	if(pages.some(page => window.location.href.includes(page))) {
+	   const Module = await ModulePromise;
+           console.log("done")
+	}
 
         audioBackend = new AudioBackend();
         audioBackend.initAudioContext();
 
 
         handleSliders(audioBackend);
-        buffer = generateBuffer(Module);
-
+	
+	if(pages.some(page => window.location.href.includes(page))) {
+           buffer = generateBuffer(Module);
+	}
 
         LaserParameters.sampleRate = audioBackend.getSampleRate();
 
@@ -57,11 +69,6 @@ function playPause() {
     }
 }
 
-let LaserParameters = {
-    sampleRate: 48000,
-    speed: 0.5,
-    distortion: 0
-};
 
 function handleSliders(audioBackend){
     const gainSlider = document.getElementById("volume");
