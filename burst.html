@@ -4,34 +4,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H41QVV2HSR"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('js', new Date());
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied'
-        });
-
-        function handleConsent(granted) {
-            if (granted) {
-                gtag('consent', 'update', {
-                    'analytics_storage': 'granted'
-                });
-                gtag('config', 'G-H41QVV2HSR');
-            } else {
-                gtag('consent', 'update', {
-                    'analytics_storage': 'denied'
-                });
-            }
-        }
-
-        function userGivesConsent() {
-            handleConsent(true);
-        }
-
-        function userDeniesConsent() {
-            handleConsent(false);
-        }
+      gtag('config', 'G-H41QVV2HSR');
     </script>
 
     <link rel="stylesheet" href="style.css">
@@ -56,18 +33,6 @@
 <body>
 <div id="3" class="survey-page" >
     <h2>Burst Laser</h2>
-<!--    <div class="BackgroundContainer">-->
-<!--        <div class="Org">-->
-<!--            <img class="BackgroundElement" src="assets/Target.png" alt="background">-->
-<!--            <img class="EmptyBackgroundElement" src="assets/Target.png" alt="background">-->
-<!--            <img class="BackgroundElement" src="assets/Whiteboard.png" alt="background">-->
-<!--        </div>-->
-<!--        <div class="Org">-->
-<!--            <img class="BackgroundElement" src="assets/Whiteboard.png" alt="background">-->
-<!--            <img class="EmptyBackgroundElement" src="assets/Target.png" alt="background">-->
-<!--            <img class="BackgroundElement" src="assets/Target.png" alt="background">-->
-<!--        </div>-->
-<!--    </div>-->
     <div class="QuestionContainer">
         <div class="question">
             <p>1. Number of Rounds</p>

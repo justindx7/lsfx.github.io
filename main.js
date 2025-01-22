@@ -2,7 +2,8 @@ let laserParameters = [];
 let oldLaserParameters = [];
 let buffer = [];
 let audioBackend;
-let laserTypes = ["classic", "blaster", "burst"];
+const laserTypes = ["classic", "blaster", "burst"];
+const laserGenCount = new Map();
 let playing = false;
 
 let LaserParameters = {
@@ -21,6 +22,7 @@ const ModulePromise = new Promise(resolve => {
 
 async function main() {
     const pages = ['burst', 'classic'];
+    laserTypes.forEach((type) => laserGenCount.set(type,0)); 
 
     try {
 	if(pages.some(page => window.location.href.includes(page))) {
@@ -80,6 +82,8 @@ function generateBuffer (Module){
     try {
         if(laserParameters.length > 0) {
             audioBuffer = new Module.generate(laserParameters[0],laserParameters[1],laserParameters[2],laserParameters[3],laserParameters[4],laserParameters[5],laserParameters[6],laserParameters[7]);
+	    let key = laserTypes[laserParameters[0] - 1];
+		laserGenCount.set(key, laserGenCount.get(key)+1);
         } else {
             audioBuffer = new Module.generate(3,5,3,1,2,2,25,100);
         }
@@ -171,7 +175,10 @@ function submitSurvey(surveyId,play) {
 }
 
 function handleDownloadWav(){
-    AudioExporter.exportWAV(audioBackend.audioBuffer, laserTypes[laserParameters[0] - 1] + "_laser.wav");
+    let today = new Date().toISOString();
+    today = today.slice(0, 10);
+    let type = laserTypes[laserParameters[0] - 1];
+    AudioExporter.exportWAV(audioBackend.audioBuffer, today + "_" + type + "_laser_" + laserGenCount.get(type) + "_SFX.wav");
 }
 
 
