@@ -82,8 +82,6 @@ function generateBuffer (Module){
     try {
         if(laserParameters.length > 0) {
             audioBuffer = new Module.generate(laserParameters[0],laserParameters[1],laserParameters[2],laserParameters[3],laserParameters[4],laserParameters[5],laserParameters[6],laserParameters[7]);
-	    let key = laserTypes[laserParameters[0] - 1];
-		laserGenCount.set(key, laserGenCount.get(key)+1);
         } else {
             audioBuffer = new Module.generate(3,5,3,1,2,2,25,100);
         }
@@ -175,6 +173,9 @@ function submitSurvey(surveyId,play) {
 }
 
 function handleDownloadWav(){
+    let key = laserTypes[laserParameters[0] - 1];
+    laserGenCount.set(key, laserGenCount.get(key) + 1);
+
     let today = new Date().toISOString();
     today = today.slice(0, 10);
     let type = laserTypes[laserParameters[0] - 1];
