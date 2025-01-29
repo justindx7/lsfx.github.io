@@ -12,11 +12,11 @@
 .question {
     margin-bottom: 20px;
     padding: 10px;
-    border: 0.2em solid #05161A;
+    border: 0.2em solid #A8A8C8;
     border-radius: 0.9em;
     height: 90px;
     width: 390px;
-    color: #05161A;
+    color: gainsboro;
     margin-left: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -74,7 +74,7 @@
 }
 
 .label-text {
-  color: #05161A;
+  color: gainsboro;
   margin-left: 14px;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -84,7 +84,7 @@
 }
 
 .label-text:hover {
-  color: #FAE9E5;
+  color: #FFFFFF;
 }
 
 /* Media query for mobile responsiveness */

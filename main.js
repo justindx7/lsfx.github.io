@@ -21,7 +21,7 @@ const ModulePromise = new Promise(resolve => {
 });
 
 async function main() {
-    const pages = ['burst', 'classic'];
+    const pages = ['burst', 'blaster', 'classic'];
     laserTypes.forEach((type) => laserGenCount.set(type,0)); 
 
     try {
@@ -153,6 +153,11 @@ function submitSurvey(surveyId,play) {
         if(surveyId === "1") {
             laserParameters.splice(4, 0, 0, 0);
         }
+
+        if(surveyId === "2") {
+          laserParameters.splice(5, 0, 0);
+        }
+
         if(surveyId === "3") {
             laserParameters.splice(1, 0, laserParameters[4]);
             laserParameters.splice(5, 1);
@@ -174,7 +179,7 @@ function submitSurvey(surveyId,play) {
 
 function handleDownloadWav(){
     let key = laserTypes[laserParameters[0] - 1];
-    laserGenCount.set(key, laserGenCount.get(key) + 1);
+    laserGenCount.set(key, laserGenCount.get(key)+1);
 
     let today = new Date().toISOString();
     today = today.slice(0, 10);

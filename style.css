@@ -3,10 +3,11 @@ body {
     margin: auto;
     width: 100vw;
     min-height: 100vh;
-    background: linear-gradient(#7711B1, #7610BB);
+    background: linear-gradient(#8811B1, #7610BB);
     background-size: cover;
     overflow-y: scroll;
     overflow-x: hidden;
+    color: gainsboro;
 }
 
 h1 {
@@ -18,7 +19,7 @@ h1 {
 
 h2 {
     font-size: 30px;
-    color: #05161A;
+    color: gainsboro;
     text-align: center;
 }
 
@@ -40,7 +41,7 @@ h2 {
   justify-content: center;
   align-items: center;
   width: 50vw;
-  border: 0.2em solid #05161A;
+  border: 0.2em solid #A8A8C8;
   border-radius: 0.9em;
   padding: 5px;
 }
@@ -67,7 +68,7 @@ h2 {
     align-items: center;
     height: 400px;
     width: 200px;
-    border: 0.2em solid #05161A;
+    border: 0.2em solid #A8A8C8;
     border-radius: 0.9em;
     padding: 20px;
     margin: 1%;
@@ -75,7 +76,7 @@ h2 {
 }
 
 .laser-title {
-  color: #05161A;
+  color: gainsboro;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 14px;
@@ -134,13 +135,13 @@ button {
     transition: all 0.3s ease-in-out;
     appearance: none;
     background-color: transparent;
-    border: 0.2em solid #05161A;
+    border: 0.2em solid #A8A8C8;
     border-radius: 0.9em;
     box-sizing: border-box;
-    color:  #05161A;
+    color:  gainsboro;
     cursor: pointer;
 
-    color: #05161A;
+    /* color: #05161A; */
     letter-spacing: 3px;
     text-transform: uppercase;
     font-size: 14px;
@@ -177,12 +178,12 @@ button:disabled {
   gap: 2px;
   margin: 0;
   background-color: transparent;
-  border: 0.2em solid #05161A;
+  border: 0.2em solid #A8A8C8;
   border-radius: 0.9em;
   transition: all 0.3s ease-in-out;
   box-sizing: border-box;
 
-  color: #05161A;
+  color: gainsboro;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 14px;
