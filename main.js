@@ -184,6 +184,14 @@ function handleDownloadWav(){
     let today = new Date().toISOString();
     today = today.slice(0, 10);
     let type = laserTypes[laserParameters[0] - 1];
+  
+    gtag('event', 'button_click', {
+     'event_category': 'User Interaction',
+     'event_label': 'Download',
+     'laser_type': type,
+     'value': 1
+    });
+
     AudioExporter.exportWAV(audioBackend.audioBuffer, today + "_" + type + "_laser_" + laserGenCount.get(type) + "_SFX.wav");
 }
 
@@ -191,7 +199,7 @@ function handleDownloadWav(){
 
 function playDemo() {
     const soundFolder = "laserdemosoundfiles";
-    const fileCount = 4;
+    const fileCount = 6;
     const soundFiles = Array.from({ length: fileCount }, (_, i) => `sound${i + 1}.mp3`);
 
     const randomFile = soundFiles[Math.floor(Math.random() * soundFiles.length)];
