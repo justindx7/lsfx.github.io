@@ -30,6 +30,18 @@
     <meta property="og:type" content="website">
 </head>
 <body>
+
+  <div class="header" id="header">
+    <button onclick="submitSurvey('2','true')">▶</button>
+    <button onclick="submitSurvey('2','false')">↺</button>
+        <div class="VolumeControl">
+            <label id="volume"></label>
+            <input type="range" class="slider" onchange="audioBackend.setGain(value)" min="0" max="1" value="0.5" step="0.01" />
+        </div>
+        <button onclick="handleDownloadWav()" >💾</button>
+        <button onclick="location.href='index.html'">←</button>
+  </div>
+
 <div id="2" class="survey-page">
     <h2>Blaster</h2>
     <div class="QuestionContainer">
@@ -131,17 +143,6 @@
                 <span class="slider-value">10</span>
             </div>
         </div>
-    </div>
-    <div class="Control">
-        <button onclick="submitSurvey('2','true')">Play</button>
-        <button onclick="submitSurvey('2','false')">(re)Generate</button>
-
-        <div class="VolumeControl">
-            <label id="volume">Volume</label>
-            <input type="range" class="slider" onchange="audioBackend.setGain(value)" min="0" max="1" value="0.5" step="0.01" />
-        </div>
-        <button onclick="handleDownloadWav()" >Download</button>
-        <button onclick="location.href='index.html'">Home</button>
     </div>
 </div>
 

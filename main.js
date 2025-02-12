@@ -156,6 +156,7 @@ function submitSurvey(surveyId,play) {
 
         if(surveyId === "2") {
           laserParameters.splice(5, 0, 0);
+          console.log(laserParameters);
         }
 
         if(surveyId === "3") {

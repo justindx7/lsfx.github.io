@@ -30,6 +30,18 @@
     <meta property="og:type" content="website">
 </head>
 <body>
+  
+  <div class="header" id="header">
+    <button onclick="submitSurvey('1','true')">▶</button>
+    <button onclick="submitSurvey('1','false')">↺</button>
+        <div class="VolumeControl">
+            <label id="volume"></label>
+            <input type="range" class="slider" onchange="audioBackend.setGain(value)" min="0" max="1" value="0.5" step="0.01" />
+        </div>
+        <button onclick="handleDownloadWav()" >💾</button>
+        <button onclick="location.href='index.html'">←</button>
+  </div>
+  
 <div id="1" class="survey-page">
     <h2>Classic</h2>
     <div class="QuestionContainer">
@@ -112,18 +124,6 @@
             </div>
         </div>
     </div>
-    <div class="Control">
-        <button onclick="submitSurvey('1','true')">Play</button>
-        <button onclick="submitSurvey('1','false')">(re)Generate</button>
-
-        <div class="VolumeControl">
-            <label id="volume">Volume</label>
-            <input type="range" class="slider" onchange="audioBackend.setGain(value)" min="0" max="1" value="0.5" step="0.01" />
-        </div>
-        <button onclick="handleDownloadWav()" >Download</button>
-        <button onclick="location.href='index.html'">Home</button>
-    </div>
-</div>
 
 <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: #333; color: #fff; padding: 15px; text-align: center; z-index: 1000;">
     <p>We use cookies to analyze site traffic and improve your experience. You can accept or decline these cookies.</p>
@@ -148,7 +148,6 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScQlrQeoqkCjKGnOL3qK84UzJdfNqZpXxnGOkFnDphbl6Lkyg/viewform?usp=header" target="_blank"> Give Feedback </a>
     </p>
 </div>
-
 
 <script src="audioExporter.js"></script>
 <script src="audioBackend.js"></script>
