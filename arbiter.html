@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H41QVV2HSR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-H41QVV2HSR');
+  </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="question.css">
+    <link rel="stylesheet" href="cookie.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
+    <meta name="description" content="LaserSoundEffects.com offers high-quality, customizable laser sound effects perfect for videos, games, and creative projects. Create the perfect sound today!">
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Laser Sound Effects">
+    <meta property="og:description" content="Generate high-quality laser sound effects effortlessly at LaserSoundEffects.com. Explore customizable laser sounds designed for videos, games, and creative projects. Start creating now!">
+    <!-- <meta property="og:image" content="https://listentonoise.com/public/opimageltn.png"> -->
+    <meta property="og:url" content="https://lasersoundeffects.com">
+    <meta property="og:type" content="website">
+</head>
+<body>
+
+  <div class="header" id="header">
+    <button onclick="submitSurvey('4','true')">▶</button>
+    <button onclick="submitSurvey('4','false')">↺</button>
+        <div class="VolumeControl">
+            <label id="volume"></label>
+            <input type="range" class="slider" onchange="audioBackend.setGain(value)" min="0" max="1" value="0.5" step="0.01" />
+        </div>
+        <button onclick="handleDownloadWav()" >💾</button>
+        <button onclick="location.href='index.html'">←</button>
+  </div>
+
+<div id="4" class="survey-page">
+    <h2>Arbiter</h2>
+    <div class="QuestionContainer">
+        <div class="question">
+            <p>1. Speed</p>
+            <div class="radio-input-wrapper">
+                <label class="label">
+                    <input value="1" name="speed" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Slow</div>
+                </label>
+                <label class="label">
+                    <input value="2" name="speed" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Moderate</div>
+                </label>
+                <label class="label">
+                    <input value="3" name="speed" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Fast</div>
+                </label>
+            </div>
+        </div>
+        <div class="question">
+            <p>2. Weight</p>
+            <div class="radio-input-wrapper">
+                <label class="label">
+                    <input value="1" name="weight" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Light</div>
+                </label>
+                <label class="label">
+                    <input value="2" name="weight" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Moderate</div>
+                </label>
+                <label class="label">
+                    <input value="3" name="weight" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Heavy</div>
+                </label>
+            </div>
+        </div>
+        <div class="question">
+            <p>3. Movement</p>
+            <div class="radio-input-wrapper">
+                <label class="label">
+                    <input value="1" name="movement" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Downwards</div>
+                </label>
+                <label class="label">
+                    <input value="2" name="movement" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Even</div>
+                </label>
+                <label class="label">
+                    <input value="3" name="movement" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Upwards</div>
+                </label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. Color</p>
+            <div class="radio-input-wrapper">
+                <label class="label">
+                    <input value="1" name="color" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Clean</div>
+                </label>
+                <label class="label">
+                    <input value="2" name="color" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Dirty</div>
+                </label>
+                <label class="label">
+                    <input value="3" name="color" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Rough</div>
+                </label>
+            </div>
+        </div>
+        <div class="question">
+            <p>5. Scream</p>
+            <div class="radio-input-wrapper">
+                <label class="label">
+                    <input value="1" name="scream" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Big</div>
+                </label>
+                <label class="label">
+                    <input value="2" name="scream" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Medium</div>
+                </label>
+                <label class="label">
+                    <input value="3" name="scream" class="radio-input" type="radio">
+                    <div class="radio-design"></div>
+                    <div class="label-text">Small</div>
+                </label>
+            </div>
+        </div>
+        <div class="question">
+            <p>6. Compression Amount</p>
+            <div class="slider-container">
+                <span>0</span>
+                <input type="range" class="slider" name="compressionAmount" min="0" max="3" value="1" oninput="updateSliderValue(this)">
+                <span>3<br></span>
+                <span class="slider-value">1</span>
+            </div>
+        </div>
+        <div class="question">
+            <p>7. Compression Intensity</p>
+            <div class="slider-container">
+                <span>10</span>
+                <input type="range" class="slider" name="satisfaction" min="10" max="1000" value="100" oninput="updateSliderValue(this)">
+                <span>1000<br></span>
+                <span class="slider-value">100</span>
+            </div>
+        </div>
+    </div>
+
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: #333; color: #fff; padding: 15px; text-align: center; z-index: 1000;">
+    <p>We use cookies to analyze site traffic and improve your experience. You can accept or decline these cookies.</p>
+    <button id="accept-cookies" onclick="userGivesConsent()">Accept</button>
+    <button id="decline-cookies" onclick="userDeniesConsent()">Decline</button>
+</div>
+<div id="cookie-settings" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; color: #333; padding: 20px; border: 1px solid #ccc; z-index: 1001;">
+    <h3>Customize Cookie Preferences</h3>
+    <form id="cookie-preferences-form">
+        <label>
+            <input type="checkbox" id="analytics-cookies" checked>
+            Allow Analytics Cookies
+        </label>
+        <br>
+        <button type="button" id="save-cookie-preferences">Save Preferences</button>
+    </form>
+</div>
+
+<div class="footnotes">
+    <p id="footnote1">
+        Justin & Decap<br>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScQlrQeoqkCjKGnOL3qK84UzJdfNqZpXxnGOkFnDphbl6Lkyg/viewform?usp=header" target="_blank"> Give Feedback </a>
+    </p>
+</div>
+
+<script src="audioExporter.js"></script>
+<script src="audioBackend.js"></script>
+<script src="main.js"></script>
+<script src="cookie.js"></script>
+<script src="LSFx.js"></script>
+</body>
+</html>

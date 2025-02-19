@@ -2,7 +2,8 @@ let laserParameters = [];
 let oldLaserParameters = [];
 let buffer = [];
 let audioBackend;
-const laserTypes = ["classic", "blaster", "burst"];
+
+const laserTypes = ["classic", "blaster", "burst", "arbiter"];
 const laserGenCount = new Map();
 let playing = false;
 
@@ -21,7 +22,7 @@ const ModulePromise = new Promise(resolve => {
 });
 
 async function main() {
-    const pages = ['burst', 'blaster', 'classic'];
+    const pages = ['burst', 'blaster', 'classic', 'arbiter'];
     laserTypes.forEach((type) => laserGenCount.set(type,0)); 
 
     try {
@@ -98,7 +99,8 @@ function generateBuffer (Module){
 const surveyResults = {
     survey1: [],
     survey2: [],
-    survey3: []
+    survey3: [],
+    survey4: []
 };
 
 function updateSliderValue(slider) {
@@ -162,7 +164,9 @@ function submitSurvey(surveyId,play) {
         if(surveyId === "3") {
             laserParameters.splice(1, 0, laserParameters[4]);
             laserParameters.splice(5, 1);
+        }
 
+        if(surveyId === "4") {
         }
 
         if(playButton) {
@@ -200,7 +204,7 @@ function handleDownloadWav(){
 
 function playDemo() {
     const soundFolder = "laserdemosoundfiles";
-    const fileCount = 6;
+    const fileCount = 8;
     const soundFiles = Array.from({ length: fileCount }, (_, i) => `sound${i + 1}.mp3`);
 
     const randomFile = soundFiles[Math.floor(Math.random() * soundFiles.length)];
