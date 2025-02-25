@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="question.css">
     <link rel="stylesheet" href="cookie.css">
+    <link rel="stylesheet" href="lasermatrix.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="LaserSoundEffects.com offers high-quality, customizable online laser sound effect generation. Perfect for game developers, sound designers and sci-fi enthusiasts. Create the perfect sound today!">
@@ -15,15 +16,14 @@
     <meta property="og:type" content="website">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H41QVV2HSR"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-H41QVV2HSR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-H41QVV2HSR');
-    </script>
-
+    </script> -->
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
@@ -37,7 +37,7 @@
     <div id="homepage" class="homepage">
       <div class="home-container">
         <div class="introduction">
-          <h2>Introduction</h2>
+          <h2>Laser Sound Synthesizer</h2>
             <h3>Welcome to LaserSoundEffects.com!</h3>
             <p>LaserSoundEffects.com is your ultimate <strong>free online laser sound synthesizer</strong>. We've made it easier than ever to generate high-quality laser sound effects, whether you're:</p>
             <ul>
@@ -50,32 +50,36 @@
           <p><a href="#" class="cta-button" id="scrollToNext">Get Started</a></p>
         </div>
         <section>
-        <h2>Laser Type</h2>
-        <div class="TypeSelection">
-            <div class="LaserTypeButtonContainer">
-                <h3 class="laser-title">Classic</h3>
-                <img class="Pictogram" src="assets/Classic.png" title="Classic Laser" alt="Classic Laser image icon">
-                <p>Ol' Reliable. Your standard duty laser pistol. You could probably hold it in one hand.</p>
-                <button onclick="location.href='classic.html'">Go</button>
-            </div>
-            <div class="LaserTypeButtonContainer">
-                <h3 class="laser-title">Blaster</h3>
-                <img class="Pictogram" src="assets/Blaster.png" title="Blaster" alt="Blaster image icon">
-                <p>A more powerful shot. Excellent for high damage, or cooking a steak. It's your gun you decide. </p>
-                <button onclick="location.href='blaster.html'">Go</button>
-            </div>
-            <div class="LaserTypeButtonContainer">
-                <h3 class="laser-title">Burst</h3>
-                <img class="Pictogram" src="assets/Burst.png" title="Burst" alt="Burst laser image icon">
-                <p>Designed specifically to turn your enemies into Swiss Cheese. RATATATA. Tell your team you need to reload. </p>
-                <button onclick="location.href='burst.html'">Go</button>
-            </div>
-            <div class="LaserTypeButtonContainer">
-                <h3 class="laser-title">Arbiter</h3>
-                <img class="Pictogram" src="assets/arbiter.png" title="arbiter" alt="Arbiter laser image icon">
-                <p>A little more technical, puts holes where you need them. Caution! May cause bleeding if used correctly. </p>
-                <button onclick="location.href='arbiter.html'">Go</button>
-            </div>
+        <div class="LaserGuns">
+          <h2>Laser Guns</h2>
+          <div id="gallery-container" class="gallery"></div>
+          <div id="details-container" class="details-container" style="display: none;"></div>
+          <!-- <div class="TypeSelection">
+              <div class="LaserTypeButtonContainer">
+
+                  <img class="Pictogram" src="assets/Classic.png" title="Classic Laser" alt="Classic Laser image icon">
+                  <h3 class="laser-title">Classic</h3>
+                  <p>Ol' Reliable. Your standard duty laser pistol. You could probably hold it in one hand.</p>
+                  <button onclick="location.href='classic.html'">Go</button>
+
+              </div>
+              <div class="LaserTypeButtonContainer">
+
+                  <img class="Pictogram" src="assets/Blaster.png" title="Blaster" alt="Blaster image icon">
+                  <h3 class="laser-title">Blaster</h3>
+                  <p>Our team of nerds is frantically experimenting with the blaster. Not safe yet for field use.</p>
+                  <button onclick="location.href='blaster.html'">Go</button>
+
+              </div>
+              <div class="LaserTypeButtonContainer">
+
+                  <img class="Pictogram" src="assets/Burst.png" title="Burst" alt="Burst laser image icon">
+                  <h3 class="laser-title">Burst</h3>
+                  <p>Designed specifically to turn your enemies into Swiss Cheese. RATATATA.</p>
+                  <button onclick="location.href='burst.html'">Go</button>
+
+              </div>
+          </div> -->
         </div>
         </section>
           <div class="Control">
@@ -119,5 +123,6 @@
     <script src="cookie.js"></script>
     <script src="LSFx.js"></script>
     <script src="scroll.js"></script>
+    <script src="lasermatrix.js"></script>
 </body>
 </html>

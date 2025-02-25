@@ -23,7 +23,7 @@ const ModulePromise = new Promise(resolve => {
 
 async function main() {
     const pages = ['burst', 'blaster', 'classic', 'arbiter'];
-    laserTypes.forEach((type) => laserGenCount.set(type,0)); 
+    laserTypes.forEach((type) => laserGenCount.set(type,0));
 
     try {
 	if(pages.some(page => window.location.href.includes(page))) {
@@ -189,7 +189,7 @@ function handleDownloadWav(){
     let today = new Date().toISOString();
     today = today.slice(0, 10);
     let type = laserTypes[laserParameters[0] - 1];
-  
+
     gtag('event', 'button_click', {
      'event_category': 'User Interaction',
      'event_label': 'Download',
