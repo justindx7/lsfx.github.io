@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="question.css">
     <link rel="stylesheet" href="cookie.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
@@ -41,9 +42,12 @@
         <div class="download-container">
             <button class="download-button" onclick="handleDownloadWav()" >💾</button>
             <div id="amountMenu" class="amount-menu">
-                <label for="variations">Number of Variations:
-                <input type="number" id="variations" min="1" max="10" value="1">
-                </label>
+                <label for="variations"></label>
+                <div class="variation-control">
+                    <button class="variation-btn decrease-btn" onclick="decreaseVariations()"><i class="material-icons">remove</i></button>
+                    <input type="number" id="variations" min="1" max="10" value="1">
+                    <button class="variation-btn increase-btn" onclick="increaseVariations()"><i class="material-icons">add</i></button>
+                </div>
             </div> 
         </div>
         <button onclick="location.href='index.html'">←</button>
@@ -98,7 +102,7 @@
                 <label class="label">
                     <input value="1" name="movement" class="radio-input" type="radio">
                     <div class="radio-design"></div>
-                    <div class="label-text">Downwards</div>
+                    <div class="label-text">Down</div>
                 </label>
                 <label class="label">
                     <input value="2" name="movement" class="radio-input" type="radio">
@@ -108,7 +112,7 @@
                 <label class="label">
                     <input value="3" name="movement" class="radio-input" type="radio">
                     <div class="radio-design"></div>
-                    <div class="label-text">Upwards</div>
+                    <div class="label-text">Up</div>
                 </label>
             </div>
         </div>

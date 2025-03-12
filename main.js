@@ -229,3 +229,20 @@ function playDemo() {
             this.audioElement.play();
     }
 }
+
+// Functions to handle variation buttons
+function increaseVariations() {
+    const input = document.getElementById('variations');
+    const currentValue = parseInt(input.value, 10);
+    if (currentValue < parseInt(input.max, 10)) {
+        input.value = currentValue + 1;
+    }
+}
+
+function decreaseVariations() {
+    const input = document.getElementById('variations');
+    const currentValue = parseInt(input.value, 10);
+    if (currentValue > parseInt(input.min, 10)) {
+        input.value = currentValue - 1;
+    }
+}

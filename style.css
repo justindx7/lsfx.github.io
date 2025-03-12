@@ -156,7 +156,7 @@ button {
     appearance: none;
     background-color: transparent;
     border: 0.1em solid #A8A8C8;
-    border-radius: 0.9em;
+    border-radius: 11px;
     box-sizing: border-box;
     color:  gainsboro;
     cursor: pointer;
@@ -200,7 +200,7 @@ button:disabled {
   margin: 0;
   background-color: transparent;
   border: 0.2em solid #A8A8C8;
-  border-radius: 0.9em;
+  border-radius: 11px;
   transition: all 0.3s ease-in-out;
   box-sizing: border-box;
 
@@ -251,31 +251,102 @@ button:disabled {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
   background-color: #333333;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  border-radius: 4px;
-  padding: 10px;
-  margin-top: 5px;
+  border-radius: 11px;
+  padding: 8px;
+  margin-top: 10px;
   color: #A7A7B3;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  box-sizing: border-box;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Add triangle pointer */
+.amount-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent #333333 transparent;
 }
 
 .amount-menu label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  text-align: center;
 }
 
 .amount-menu input {
-  width: 90%;
-  padding: 5px;
-  margin-top: 5px;
+  width: 40px;
+  padding: 3px;
+  margin: 0 5px;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  font-size: 14px;
 }
 
-/* Style for input and button inside menu */
-.download-container:hover .amount-menu {
+.amount-menu input::-webkit-outer-spin-button,
+.amount-menu input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.variation-control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.variation-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #444;
+  color: #A7A7B3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 0;
+  border: 0.1em solid #A8A8C8;
+  flex-shrink: 0;
+}
+
+.variation-btn .material-icons {
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.variation-btn:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+/* Show menu on hover of container or menu itself */
+.download-container:hover .amount-menu,
+.amount-menu:hover {
   display: block;
+  visibility: visible;
   opacity: 1;
 }
 
