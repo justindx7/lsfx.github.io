@@ -183,11 +183,6 @@ function submitSurvey(surveyId,play) {
 }
 
 function handleDownloadWav(){
-    let key = laserTypes[laserParameters[0] - 1];
-    laserGenCount.set(key, laserGenCount.get(key)+1);
-
-    let today = new Date().toISOString();
-    today = today.slice(0, 10);
     let type = laserTypes[laserParameters[0] - 1];
 
     gtag('event', 'button_click', {
@@ -197,7 +192,21 @@ function handleDownloadWav(){
      'value': 1
     });
 
-    AudioExporter.exportWAV(audioBackend.audioBuffer, today + "_" + type + "_laser_" + laserGenCount.get(type) + "_SFX.wav");
+        let variationCount = document.getElementById('variations').value;
+        if(variationCount > 10) { variationCount = 10 }
+        if(variationCount < 1) { variationCount = 1 }
+        console.log(`Generating ${variationCount} variations`);
+        
+        for(let i = 0; i < variationCount; i++) {
+            let key = laserTypes[laserParameters[0] - 1];
+            laserGenCount.set(key, laserGenCount.get(key)+1);
+
+            let today = new Date().toISOString();
+            today = today.slice(0, 10);
+
+            AudioExporter.exportWAV(audioBackend.audioBuffer, today + "_" + type + "_laser_" + laserGenCount.get(type) + "_SFX.wav");
+            buffer = generateBuffer(Module);
+    }
 }
 
 
